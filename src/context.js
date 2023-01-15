@@ -1,6 +1,6 @@
 import React,{useContext,useEffect, useState} from "react"
 const AppContext = React.createContext()
-export  const API_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+export  const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 // now need provider
 const AppProvider = ({children})=>{
     const [isLoading,setIsloading] =useState(true)
@@ -31,6 +31,7 @@ const getMovies=  async(url)=>{
                 msg:data.Error
             })
         }
+        
     }
     catch (error){
         console.log(error);
